@@ -1,34 +1,33 @@
-# 40. Traffic Flow and Congestion Analysis Using Python
+
+  
+
+# 52. Hackathon Team Formation and Ranking
 
 ## 1. Problem Statement
 
-Write a Python program to analyze vehicle counts across multiple roads and time intervals. Identify the peak traffic period, classify congestion levels, and determine which roads exceed their traffic capacity.
-
+Write a Python program to form hackathon teams, validate team sizes, calculate total scores from multiple rounds, and rank teams based on their scores. If two teams have the same total score, use the highest score in the final round to decide the ranking.
 
 ## 2. Algorithm
 
-1. Start.
-2. Enter the number of roads and time intervals.
-3. Enter each road's name, capacity, and vehicle counts for each interval.
-4. Calculate congestion percentage for each interval.
-5. Classify congestion as low, moderate, or high.
-6. Identify the peak traffic period.
-7. Check whether each road exceeds its capacity.
-8. Display the results.
-9. Stop.
+1. Start the program.
+2. Enter the number of teams and the minimum and maximum team sizes.
+3. Enter each team's name, member count, and scores for three rounds.
+4. Validate the team size.
+5. Calculate each team's total score.
+6. Sort teams by total score in descending order.
+7. If totals are tied, compare final-round scores.
+8. Display valid teams and their rankings.
+9. Stop the program.
 
 ## 3. Flowchart 
 ```mermaid
-
 flowchart TD
-    A([Start]) --> B[/Enter Road and Traffic Data/]
-    B --> C[Calculate Congestion and Peak Period]
-    C --> D{Capacity Exceeded?}
-    D -- Yes --> E[Mark Over Capacity]
-    D -- No --> F[Mark Within Capacity]
-    E --> G[/Display Results/]
-    F --> G
-    G --> H([Stop])
+    A([Start]) --> B[/Enter Team Details/]
+    B --> C[Validate Team Size]
+    C --> D[Calculate Scores]
+    D --> E[Rank Teams and Resolve Ties]
+    E --> F[/Display Rankings/]
+    F --> G([Stop])
 ```
 
 
@@ -36,33 +35,34 @@ flowchart TD
 ## 5. Sample Input
 
 
-Enter number of roads: 2
-Enter number of time intervals: 3
-Enter time intervals separated by spaces: 9AM 1PM 6PM
+Enter number of teams: 3
 
-Enter road name: Road A
-Enter road capacity: 100
-Enter vehicle counts for each interval: 30 60 90
+Team 1
+Enter team name: Alpha
+Enter number of members: 3
+Enter Round 1 score: 80
+Enter Round 2 score: 85
+Enter Round 3 score: 90
 
-Enter road name: Road B
-Enter road capacity: 80
-Enter vehicle counts for each interval: 20 50 100
+Team 2
+Enter team name: Beta
+Enter number of members: 2
+Enter Round 1 score: 85
+Enter Round 2 score: 85
+Enter Round 3 score: 95
+
+Team 3
+Enter team name: Gamma
+Enter number of members: 5
 
 
 ## 6. Sample Output
 
 
---- TRAFFIC ANALYSIS ---
-Peak Traffic Period: 6PM
+Invalid team size! Team rejected.
 
-Road: Road A
-Maximum Vehicles: 90
-Congestion: High
-Status: Within Capacity
-
-Road: Road B
-Maximum Vehicles: 100
-Congestion: High
-Status: Capacity Exceeded
+--- Hackathon Rankings ---
+1 Beta | Members: 2 | Total Score: 265 | Final Round: 95
+2 Alpha | Members: 3 | Total Score: 255 | Final Round: 90
 
 
